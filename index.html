@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Easy | Login</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;font-family:Arial,sans-serif;background:linear-gradient(135deg,#0f766e,#14b8a6);display:flex;align-items:center;justify-content:center;padding:20px}
+.login-box{width:100%;max-width:410px;background:#fff;border-radius:20px;padding:35px;box-shadow:0 18px 50px #0004}
+.logo{text-align:center;font-size:32px;font-weight:800;color:#0f766e;margin-bottom:7px}
+.subtitle{text-align:center;color:#6b7280;margin-bottom:28px}
+label{display:block;font-weight:700;color:#374151;margin:15px 0 7px}
+input{width:100%;padding:13px 14px;border:1px solid #d1d5db;border-radius:9px;font-size:16px;outline:none}
+input:focus{border-color:#0f766e;box-shadow:0 0 0 3px #14b8a622}
+.password-row{position:relative}
+.password-row input{padding-right:55px}
+.show{position:absolute;right:12px;top:11px;border:0;background:none;cursor:pointer;color:#0f766e;font-weight:700}
+.login-btn{width:100%;border:0;background:#0f766e;color:#fff;padding:14px;border-radius:9px;font-size:17px;font-weight:700;margin-top:24px;cursor:pointer}
+.login-btn:hover{background:#0b625b}
+.forgot{text-align:right;margin-top:12px}
+.forgot a{color:#0f766e;text-decoration:none;font-size:14px}
+.divider{display:flex;align-items:center;gap:10px;margin:24px 0;color:#9ca3af;font-size:13px}
+.divider:before,.divider:after{content:"";height:1px;background:#e5e7eb;flex:1}
+.signup{text-align:center;color:#6b7280}
+.signup a{color:#0f766e;font-weight:700;text-decoration:none}
+.note{text-align:center;font-size:12px;color:#9ca3af;margin-top:22px}
+</style>
+</head>
+<body>
+<div class="login-box">
+  <div class="logo">📚 Study Easy</div>
+  <p class="subtitle">Class 10th & 12th Study Platform</p>
+
+  <form onsubmit="login(event)">
+    <label for="email">Email / Username</label>
+    <input id="email" type="text" placeholder="Enter your email or username" required>
+
+    <label for="password">Password</label>
+    <div class="password-row">
+      <input id="password" type="password" placeholder="Enter your password" required>
+      <button class="show" type="button" onclick="togglePassword()">Show</button>
+    </div>
+
+    <div class="forgot"><a href="#" onclick="forgotPassword(event)">Forgot Password?</a></div>
+    <button class="login-btn" type="submit">Login</button>
+  </form>
+
+  <div class="divider">OR</div>
+  <div class="signup">Don't have an account? <a href="#">Create Account</a></div>
+  <p class="note">Demo login page — real account authentication needs a backend/database.</p>
+</div>
+
+<script>
+function togglePassword(){
+  const p=document.getElementById("password"), b=document.querySelector(".show");
+  if(p.type==="password"){p.type="text";b.textContent="Hide";}
+  else{p.type="password";b.textContent="Show";}
+}
+function login(e){
+  e.preventDefault();
+  alert("Login button working! Real login authentication can be connected next.");
+}
+function forgotPassword(e){
+  e.preventDefault();
+  alert("Password reset page can be connected next.");
+}
+</script>
+</body>
+</html>
